@@ -20061,6 +20061,9 @@ function getTextWithoutTrailingNewline(text) {
 }
 function isCustomHTMLInlineNode(_a, node) {
     var schema = _a.schema;
+    if (node.type === 'customInline') {
+        return true;
+    }
     var html = node.literal;
     var matched = html.match(reHTMLTag);
     if (matched) {
